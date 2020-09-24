@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             $user->create([
                 'name' => 'Usuario '.$contador,
                 'email' => 'email'.$contador.'@hotmail.com',
-                'password' => '123456'
+                'password' => bcrypt('123456')
             ]);
         }
         
