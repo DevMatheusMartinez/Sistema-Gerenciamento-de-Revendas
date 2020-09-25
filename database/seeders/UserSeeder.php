@@ -14,15 +14,6 @@ class UserSeeder extends Seeder
      */
     public function run(User $user)
     {
-
-        for($contador = 1; $contador <=5; $contador++)
-        {
-            $user->create([
-                'name' => 'Usuario '.$contador,
-                'email' => 'email'.$contador.'@hotmail.com',
-                'password' => bcrypt('123456')
-            ]);
-        }
-        
+        User::factory()->count(5)->create();
     }
 }

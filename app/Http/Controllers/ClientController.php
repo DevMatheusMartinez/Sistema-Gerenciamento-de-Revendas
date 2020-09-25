@@ -18,83 +18,56 @@ class ClientController extends Controller
 
     public function index()
     {
-        $client = auth('api')->user()->client();
-        $quantidade = $client->withCount("veiculo")->get();
-        return response()->json([
-            $client->paginate(10)->sortBy('nome'),
-            $quantidade
-    ], 200);
+        $user = auth('api')->user();
+        return $user->clients()->withCount('veiculo')->get();
     }
 
-    public function show($id)
+    public function show(int $id)
     {
-        try{
+        $client = auth('api')->user()->clients()->findOrFail($id);
+        $client->load('veiculo');
 
-            $client = auth('api')->user()->client()->findOrFail($id);
-            $veiculos = Veiculo::with('cliente')->where('client_id', $id)->get();
-            return response()->json([
-                'data' => $client,
-                'veiculos do cliente' => $veiculos,   
-            ] ,200);
-        }catch(\Exception $e){
-            $message = new ApiMessages($e->getMessage());
-            return response()->json($message->getMessage(), 401);
-        }
+        return $client;
     }
 
     public function store(ClientRequest $request)
     {
-        
-        $data = $request->all();
-        try{
-            $data['user_id'] = auth('api')->user()->id;
-            $client = $this->client->create($data);
-            return response()->json([
-                'data' => [
-                    'msg' => 'Cliente cadastrado com sucesso!'
-                ]
-            ] ,200);
-        }catch(\Exception $e){
-            $message = new ApiMessages($e->getMessage());
-            return response()->json($message->getMessage(), 401);
+        $user = auth('api')->user();
+
+        if(is_null($user)){
+            abort(404, "Usuario não encontrado!");
         }
+
+        Client::create([
+            'user_id' => $user->id,
+            'nome' => $request->nome, 
+            'cpf' => $request->cpf, 
+            'email' => $request->email,
+            'telefone' => $request->telefone
+        ]);
+
+        return response()->json([
+            'data' => 'Cliente Cadastrado com sucesso!'
+        ], 200);
     }
 
     public function update($id, ClientRequest $request)
     {
-        
-        $data = $request->all();
-        try{
-
-            $client = auth('api')->user()->client()->findOrFail($id);
+            $data = $request->all();
+            $client = auth('api')->user()->clients()->findOrFail($id);
             $client->update($data);
             return response()->json([
-                'data' => [
-                    'msg' => 'Cliente atualizado com sucesso!'
-                ]
+                    'data' => 'Cliente atualizado com sucesso!'
             ] ,200);
-        }catch(\Exception $e){
-            $message = new ApiMessages($e->getMessage());
-            return response()->json($message->getMessage(), 401);
-        }
     }
 
     public function destroy($id)
     {
-        
-        try{
-
-            $client = auth('api')->user()->client()->findOrFail($id);
-            $client->delete();
-            return response()->json([
-                'data' => [
-                    'msg' => 'Cliente removido com sucesso!'
-                ]
+        $client = auth('api')->user()->clients()->findOrFail($id);
+        $client->delete();
+        return response()->json([
+                    'data' => 'Cliente removido com sucesso!'
             ] ,200);
-        }catch(\Exception $e){
-            $message = new ApiMessages($e->getMessage());
-            return response()->json($message->getMessage(), 401);
-        }
     }
 
 }

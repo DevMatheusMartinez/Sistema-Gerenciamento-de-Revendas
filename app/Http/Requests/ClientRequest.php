@@ -24,10 +24,9 @@ class ClientRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required',
-            'cpf' => 'required',
-            'email' => 'required',
-            'telefone' => 'required',
+            'nome' => ['required'],
+            'cpf' => ['required'],
+            'email' => ['unique:clients', 'email']
         ];
     }
 }

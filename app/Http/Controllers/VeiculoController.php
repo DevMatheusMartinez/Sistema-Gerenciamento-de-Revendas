@@ -1,35 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Http\Requests\VeiculoRequest;
 use App\Models\Veiculo;
 use App\Api\ApiMessages;
 
 class VeiculoController extends Controller
 {
-    private $veiculo;
-
-    public function __construct(Veiculo $veiculo)
+    public function store(VeiculoRequest $request)
     {
-        $this->veiculo = $veiculo;
+        Veiculo::create([
+            'client_id' => $request->client_id, 
+            'placa' => $request->placa, 
+            'marca' => $request->marca, 
+            'modelo' => $request->modelo, 
+            'cor' => $request->cor,
+        ]);
+
+        return response()->json([
+            'data' => 'Veiculo cadastrado com sucesso!'
+        ], 200);
     }
-
-
-    public function store(Request $request)
-    {
-        $data = $request->all();
-        try{
-            $veiculo = $this->veiculo->create($data);
-            return response()->json([
-                'data' => [
-                    'msg' => 'Veiculo cadastrado com sucesso!'
-                ]
-            ] ,200);
-        }catch(\Exception $e){
-            $message = new ApiMessages($e->getMessage());
-            return response()->json($message->getMessage(), 401);
-        }
-    }
-
 }
+
