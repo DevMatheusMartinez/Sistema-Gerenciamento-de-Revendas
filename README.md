@@ -20,9 +20,14 @@
 <p>Cria um novo usuário no sistema</p>
 <h3>Corpo request exemplo</h3>
 ![image](https://user-images.githubusercontent.com/54003486/94474552-30355d00-01a4-11eb-99d8-eaba19f2ed2d.png)
+<h3>Response exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94475033-e5681500-01a4-11eb-8eaf-037c5f414cb0.png)
+
 
 <h2>POST ../api/login</h2>
 <p> Gera um token que permite que o usuário tenha acesso as rotas privadas do sistema</p>
+<h3>Corpo request exemplo</h3>
+
 
 <h2>GET ../api/logout</h2>
 <p> Invalída o token em uso atual.</p>
