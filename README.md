@@ -78,6 +78,17 @@
 <h3>Response exemplo</h3>
 ![image](https://user-images.githubusercontent.com/54003486/94479450-32e78080-01ab-11eb-926e-a8efdf552214.png)
 
+<h2>POST ../api/veiculos</h2>
+<p> Cadastra um veiculo de um cliente especifico </p>
+<h3>Header</h3>
+![image](https://user-images.githubusercontent.com/54003486/94476204-8c00e580-01a6-11eb-9097-2babb4cd2678.png)
+<h3>Corpo request exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94480731-18aea200-01ad-11eb-81fe-1dd046b7a7d3.png)
+<h3>Response exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94480808-34b24380-01ad-11eb-8764-1e3d5b9805a9.png)
+
+
+
 
 
 
