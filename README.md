@@ -43,10 +43,46 @@
 <h3>Aqui será listado as rotas privadas da aplicação</h3>
 <li>Criação de clientes</li>
 <li>Listagem de clientes</li>
-<li>Mostrar dados de um cliente e seu veiculos</li>
+<li>Mostrar um cliente especifico e seus veiculos</li>
 <li>Editar cliente</li>
 <li>Excluir cliente</li>
 <li>Cadastrar veiculo do cliente atravez do seu id</li>
+
+<h2>GET ../api/clientes</h2>
+<p> Lista todos os clientes cadastrados pelo o usuario logado.</p>
+<h3>Header</h3>
+![image](https://user-images.githubusercontent.com/54003486/94476204-8c00e580-01a6-11eb-9097-2babb4cd2678.png)
+<h3>Response exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94478140-409c0680-01a9-11eb-967c-79329aa318f6.png)
+
+<h2>GET ../api/clientes/{id}</h2>
+<p> Mostra um cliente especifico e seus veiculos atravez do id.</p>
+<h3>Header</h3>
+![image](https://user-images.githubusercontent.com/54003486/94476204-8c00e580-01a6-11eb-9097-2babb4cd2678.png)
+<h3>Response exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94478705-02531700-01aa-11eb-8f7d-d32d5c19b646.png)
+
+<h2>PUT ../api/clientes/{id}</h2>
+<p> Editar um cliente especificado pelo seu id </p>
+<h3>Corpo request exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94479155-bfde0a00-01aa-11eb-9624-ddcb89c9d770.png)
+<h3>Header</h3>
+![image](https://user-images.githubusercontent.com/54003486/94476204-8c00e580-01a6-11eb-9097-2babb4cd2678.png)
+<h3>Response exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94479207-cff5e980-01aa-11eb-8c4a-e7954cfa450d.png)
+
+<h2>DESTROY ../api/clientes/{id}</h2>
+<p> Deletar um cliente especificado pelo seu id </p>
+<h3>Header</h3>
+![image](https://user-images.githubusercontent.com/54003486/94476204-8c00e580-01a6-11eb-9097-2babb4cd2678.png)
+<h3>Response exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94479450-32e78080-01ab-11eb-926e-a8efdf552214.png)
+
+
+
+
+
+
 
 
 
