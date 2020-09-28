@@ -19,6 +19,9 @@
 <h2>POST ../api/usuarios</h2>
 <p>Cria um novo usuário no sistema</p>
 
+<h2>POST ../api/login</h2>
+<p> Gera um token que permite que o usuário tenha acesso as rotas privadas do sistema</p>
+
 
 
 
