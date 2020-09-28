@@ -33,11 +33,11 @@ class ClientController extends Controller
     public function store(ClientRequest $request)
     {
         $user = auth('api')->user();
-
+        
         if(is_null($user)){
-            abort(404, "Usuario não encontrado!");
+            abort(404, "Usuario nao encontrado!");
         }
-
+        
         Client::create([
             'user_id' => $user->id,
             'nome' => $request->nome, 
@@ -45,9 +45,8 @@ class ClientController extends Controller
             'email' => $request->email,
             'telefone' => $request->telefone
         ]);
-
         return response()->json([
-            'data' => 'Cliente Cadastrado com sucesso!'
+            'data' => 'Cliente cadastrado com sucesso!'
         ], 200);
     }
 
