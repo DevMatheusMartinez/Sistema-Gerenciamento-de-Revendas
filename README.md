@@ -16,6 +16,12 @@
 <li>Logout</li>
 <li>Refresh</li>
 
+<h2>POST ../api/usuarios</h2>
+<p>Cria um novo usuário no sistema</p>
+
+
+
+
 
 
 
