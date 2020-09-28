@@ -22,6 +22,14 @@
 <h2>POST ../api/login</h2>
 <p> Gera um token que permite que o usuário tenha acesso as rotas privadas do sistema</p>
 
+<h2>GET ../api/logout</h2>
+<p> Invalída o token em uso atual.</p>
+
+<h2>GET ../api/refresh</h2>
+<p> </p>
+
+
+
 
 
 
