@@ -10,6 +10,12 @@
 
 <h2>Rotas Públicas</h2>
 
+<h3>Aqui será listado as rotas públicas da aplicação</h3>
+<li>Criação de usuário</li>
+<li>Login</li>
+<li>Logout</li>
+<li>Refresh</li>
+
 
 
 
