@@ -18,6 +18,8 @@
 
 <h2>POST ../api/usuarios</h2>
 <p>Cria um novo usuário no sistema</p>
+<h3>Corpo request exemplo</h3>
+![image](https://user-images.githubusercontent.com/54003486/94474141-9968a080-01a3-11eb-9ad1-c18b06a3ab4e.png)
 
 <h2>POST ../api/login</h2>
 <p> Gera um token que permite que o usuário tenha acesso as rotas privadas do sistema</p>
